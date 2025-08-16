@@ -1,0 +1,227 @@
+﻿3.a) Enlaces (<a>)
+
+<a href="http://www.google.com.ar">Click aquí para ir a Google</a>
+
+Enlace básico.
+
+Al hacer clic, abre Google en la misma pestaña.
+
+<a href="http://www.google.com.ar" target="_blank">Click aquí para ir a Google</a>
+
+Igual que el anterior, pero con target="_blank" abre Google en nueva pestaña/ventana.
+
+<a href="http://www.google.com.ar" type="text/html" hreflang="es" charset="utf-8" rel="help">
+
+Tiene atributos adicionales (tipo MIME, idioma, codificación y relación).
+
+Problemas: el href está mal escrito (espacio en medio) y no tiene texto visible dentro del <a>.
+
+<a href="#">Click aquí para ir a Google</a>
+
+Enlace que no navega a otro sitio: "#" es un marcador vacío que recarga la misma página.
+
+<a href="#arriba">Click aquí para volver arriba</a>
+
+<a name="arriba" id="arriba"></a>
+
+El primero apunta a un ancla interna (#arriba).
+
+El segundo crea el punto de destino dentro de la página.
+
+3.b) Imagen + enlace
+
+<p><img src="im1.jpg" alt="imagen1" /><a href="http://www.google.com.ar">Click aquí</a></p>
+
+Imagen y enlace están separados: la imagen no es clickeable, solo el texto.
+
+<p><a href="http://www.google.com.ar"><img src="im1.jpg" alt="imagen1" /></a> Click aquí</p>
+
+Imagen es clickeable; texto "Click aquí" no está dentro del enlace.
+
+<p><a href="http://www.google.com.ar"><img src="im1.jpg" alt="imagen1" />Click aquí</a></p>
+
+Imagen y texto están juntos dentro del enlace: todo el bloque es clickeable.
+
+<p><a href="http://www.google.com.ar"><img src="im1.jpg" alt="imagen1" /></a> <a href="http://www.google.com.ar">Click aquí</a></p>
+
+Imagen y texto son dos enlaces separados que apuntan al mismo destino.
+
+3.c) Listas
+
+<ul> 
+<li>xxx</li> 
+<li>yyy</li> 
+<li>zzz</li> 
+</ul> 
+
+Lista no ordenada con viñetas.
+
+<ol> 
+<li>xxx</li> 
+<li>yyy</li> 
+<li>zzz</li> 
+</ol> 
+
+Lista ordenada numérica.
+
+<ol> 
+<li>xxx</li> 
+</ol> 
+
+<ol> 
+<li value="2">yyy</li> 
+</ol> 
+
+<ol> 
+<li value="3">zzz</li> 
+</ol> 
+
+Tres listas separadas, cada una con un único elemento.
+
+El atributo value cambia el número inicial de cada ítem.
+
+<blockquote> 
+<p>
+1. xxx<br /> 
+2. yyy<br /> 
+3. zzz
+</p> 
+</blockquote>
+
+Texto sangrado con saltos <br /> para simular numeración, pero no es una lista semántica.
+
+3.d) Tablas simples
+
+<table border="1" width="300"> 
+<tr> 
+<th>Columna 1</th> 
+<th>Columna 2</th> 
+</tr> 
+<tr> 
+<td>Celda 1</td> 
+<td>Celda 2</td> 
+</tr> 
+<tr> 
+<td>Celda 3</td> 
+<td>Celda 4</td> 
+</tr> 
+</table> 
+
+Usa <th> para títulos de columna (texto centrado y en negrita por defecto).
+
+<table border="1" width="300"> 
+<tr> 
+<td><div align="center"><strong>Colum na1</strong></div></td> 
+<td><div align="center"><strong>Columna 2</strong></div></td> 
+</tr> 
+<tr> 
+<td>Celda 1</td> 
+<td>Celda 2</td> 
+</tr> 
+<tr> 
+<td>Celda 3</td> 
+<td>Celda 4</td> 
+</tr> 
+</table>
+      
+No usa <th>, sino <td> 
+con <div align="center"><strong>…</strong></div> para forzar alineación y negrita manualmente.
+
+3.e) Tablas con caption y colspan
+
+<table width="200"> 
+<caption>
+<table width="200"> 
+<tr> Título 
+</caption>
+
+<tr> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+<td bgcolor="#dddddd">&nbsp;</td>
+</tr>
+
+<tr> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+<td bgcolor="#dddddd"> &nbsp;</td> 
+<td bgcolor="#dddddd">&nbsp;</td>
+</tr> 
+</table>
+
+<td colspan="3">
+<div align="center">Título</div>
+</td> 
+
+</tr>
+
+<tr>
+<td bgcolor="#dddddd">&nbsp;</td> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+<td bgcolor="#dddddd">&nbsp;</td>
+</tr> 
+
+<tr> 
+<td bgcolor="#dddddd">&nbsp;</td>
+<td bgcolor="#dddddd">&nbsp;</td> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+</tr> 
+
+</table>
+
+Primera tabla: usa <caption> (título semántico de la tabla), pero la estructura está mal cerrada (hay <table> dentro del <caption>).
+
+Segunda tabla: no usa <caption>, sino un <td colspan="3"> para hacer una celda que abarque toda la fila como título.
+
+3.f) Uso de rowspan vs colspan
+
+Primera tabla:
+
+rowspan="2" hace que la celda ocupe dos filas verticalmente.
+
+Segunda tabla:
+
+colspan="2" hace que una celda ocupe dos columnas horizontalmente.
+
+3.g) Combinación de colspan y rowspan + bordes y espaciado
+
+Primera tabla: combina colspan="2" y rowspan="2" en una misma celda.
+
+Segunda tabla: añade cellpadding="0" y cellspacing="0" para eliminar espacio interno y externo en las celdas.
+
+3.h) Formularios
+
+1. Método post, destino procesar.php, abre en nueva pestaña, usa <fieldset> y <legend>.
+
+type="password" oculta la clave.
+
+2. Método get, destino vacío (misma página), inputs simples dentro de <label>.
+
+type="text" para clave → visible.
+
+3. Acción mailto:, método post, enctype=text/plain, botón es type="reset" pero con texto "Enviar" (confuso, porque en realidad resetea el formulario).
+
+3.i) Botones
+
+<button><!--codigo--></button>
+
+Puede contener HTML (imagen + texto).
+
+Más flexible en diseño.
+
+<input type="button" ... />
+
+Solo texto en value, no admite contenido HTML interno.
+
+3.j) Radio buttons
+
+1. Ambos radios comparten name="opcion" → mutuamente excluyentes (solo uno puede marcarse).
+
+2. Radios con nombres distintos (opcion1 y opcion2) → se comportan como dos grupos separados, pueden marcarse ambos a la vez.
+
+3.k) Listas desplegables
+
+1. select simple con grupos <optgroup> → solo se puede elegir una opción.
+
+2. select multiple="multiple" → se pueden elegir varias opciones manteniendo presionada Ctrl/Cmd.
+
+Usa arreglo name="lista[]" para enviar varios valores.
