@@ -1,0 +1,146 @@
+2.a)
+
+<!-- Código controlado el día 12/08/2009 →
+
+Genera el comentario "Código controlado el día 12/08/2009" que puede ir en cualquier sección (head/body)
+
+Sección:
+  -Head o Body
+
+Atributos:
+  -No posee atributos
+  
+Etiquetas:
+  -La etiqueta de apertura (<!--) 
+  -La etiqueta de cierre (-->)
+
+Texto (" Código controlado el día 12/08/2009 ")
+
+2.b)
+
+<div id="bloque1">Contenido del bloque1</div>
+
+Crea un contenedor de bloque con el texto “Contenido del bloque1”.
+
+Sección:
+  -Body
+
+Atributos:
+  -id (opcional), identifica como "bloque1" al elemento.
+  
+Etiquetas:
+  -div (<div> </div>), crea un contenedor de bloque.
+
+Texto (" Código controlado el día 12/08/2009 ")
+
+2.c)
+
+<img src="" alt="lugar imagen" id="im1" name="im1" width="32" height="32" longdesc="detalles.htm" />
+
+Tecnicamente inserta una imagen 32x32, con un id y un name, que posee un texto alternativo y un enlace a una descripción larga de la imagen.
+Pero como el src esta vacío, no muestra nada.
+
+Sección:
+  -Body
+
+Atributos:
+  -src (obligatorio), indica la ruta o URL de la imagen, en este caso su usabilidad es nula.
+  -alt (obligatorio), muestra "lugar imagen" si la imagen no carga.
+  -id (opcional), identifica de manera global al elemento como "im1".
+  -name (opcional), le da el nombre de "im1" al elemento.
+  -width (opcional), define que el ancho de la imagen sea 32 píxeles.
+  -height (opcional), define que el alto de la imagen sea 32 píxeles.
+  -longdesc (opcional), enlaza a "detalles.htm".
+  
+Etiquetas:
+  -img (<img />), inserta una imagen.
+
+2.d)
+
+<meta name="keywords" lang="es" content="casa, compra, venta, alquiler " />
+<meta http-equiv="expires" content="16-Sep-2019 7:49 PM" />
+
+Define la lista de palabras claves "casa, compra, venta, alquiler " y que la fecha de expiración de la página es 16-Sep-2019 7:49 PM.
+
+Sección:
+  -Head
+
+Atributos:
+  -lang (opcional), al contenener "es",indica que el idioma es español.
+  -content (opcional), es el contenido del dato, en este caso "casa, compra, venta, alquiler ".
+  -name (opcional), le da el nombre de "keywords" al elemento.
+  -http-equiv="expires" (opcional), indica que debe expirar.
+  -content (opcional), indica la fecha en la que expira.
+
+Etiquetas:
+  -meta (<meta />), define metadatos.
+
+2.e)
+
+<a href="http://www.e-style.com.ar/resumen.html" type="text/html" hreflang="es" charset="utf-8" rel="help">Resumen HTML </a>
+
+Enlaza la pagina "http://www.e-style.com.ar/resumen.html"  con la etiqueta visible “Resumen HTML”
+
+Sección:
+  -Body
+
+Atributos:
+  -href (obligatoria), apunta a "http://www.e-style.com.ar/resumen.html".
+  -type (opcional), es de tipo texto.
+  -hreflang (opcional), al contenener "es",indica que el idioma del recurso es español.
+  -charset="utf-8" (opcional), indica la codificación de caracteres.
+  -rel="help" (opcional), indica que el recurso vinculado es documentación o ayuda relacionada.
+
+Etiquetas:
+  -a (<a> </a>), inserta vínculos o marcadores.
+
+Texto (“Resumen HTML”)
+
+2.f)
+
+<table width="200" summary="Datos correspondientes al ejercicio vencido">
+<caption align="top"> Título </caption>
+<tr>
+<th scope="col">&nbsp;</th>
+<th scope="col">A</th>
+<th scope="col">B</th>
+<th scope="col">C</th>
+</tr>
+<tr>
+<th scope="row">1º</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th scope="row">2º</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+
+Muestra una tabla 4×3 con título “Título”
+
+Sección:
+  -Body
+
+Atributos:
+  -width (opcional), define que el ancho de la tabla sea de 200 píxeles.
+  -summary (opcional), indica que la tabla tratara sobre "Datos correspondientes al ejercicio vencido".
+  -align="top" (opcional), posiciona el tulo de la tabla arriba.
+  -scope="col" (opcional), indica que es una celda de encabezado para columna.
+  -scope="row" (opcional) iindica que es una celda de encabezado para fila.
+
+Etiquetas:
+  -table (<table>), inserta una tabla.
+  -caption (<caption> </caption), establece el título para una tabla.
+  -tr (<tr> </tr>), inserta una fila en la tabla.
+  -th (<th> </th>), es la celda de encabezado de una tabla.
+  -td (<td> </td>), es una celda regular de una tabla.
+
+Caracter Especial: 
+  -&nbsp, representa un espacio en blanco que el navegador no puede dividir ni colapsar.
+
+
+
