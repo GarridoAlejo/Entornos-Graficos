@@ -1,0 +1,167 @@
+PHP: variables, tipos, operadores, expresiones, estructuras de control
+
+Ejercicio 1:
+
+a) Las variables y sus tipos:
+$a = TRUE ( tipo boolean)
+
+
+$b = "xyz" ( tipo string)
+
+
+$c = 'xyz' ( tipo string)
+
+
+$d = 12 ( tipo integer)
+
+
+$f, $g ( tipo integer)
+
+b) Los operadores:
+ =, *, +=, ++, ?: (ternario), . (concatenación en echo implícito), comparación is_int, is_string.
+
+c) Las funciones y sus parámetros:
+doble($i) ( recibe un entero y retorna $i*2)
+
+
+gettype($var) (devuelve tipo de variable
+
+
+is_int($d) ( verifica si $d es entero)
+
+
+is_string($a) (verifica si $a es string)
+
+
+d) Estructuras de control:
+if … else
+
+
+$a ? ++$d : $d*3; operador ternario
+
+
+e) Salida por pantalla:
+gettype($a) → boolean
+
+
+gettype($b) → string
+
+
+gettype($c) → string
+
+
+gettype($d) → integer
+
+
+Primer if: verdadero, $d=12+4=16
+
+
+Segundo if: falso, no imprime
+
+
+$d = $a ? ++$d : $d*3; → como $a=TRUE → $d=17
+
+
+$f = doble($d++); → doble(17)=34, luego $d=18
+
+
+$g = $f += 10; → $f=44, $g=44
+
+
+echo $a, $b, $c, $d, $f , $g; →
+ $a=1 (boolean en echo), $b=xyz, $c=xyz, $d=18, $f=44, $g=44
+Ejercicio 2:
+
+Parte A)
+
+Los códigos son equivalentes, imprimen del 1 al 10 y el do..while evalúa la condición al final
+
+
+Parte B) 
+
+Los códigos son equivalentes, imprimen del 1 al 10 y se diferencian en la forma en que se controla el bucle (for clásico, for infinito con break, for con incremento en la condición).
+
+Parte C)
+
+Ambos son equivalentes. Sirven para comparar el valor de $i y mostrar un mensaje según el caso. Se diferencian en la estructura de control, uno utiliza expresiones logicas mientras que el otro compara $i con varios valores fijos.
+
+
+Ejercicio 3:
+
+a) Este código genera una tabla HTML de 5 filas y 2 columnas usando PHP, con celdas vacias 
+for ($r = 1; $r <= $row; $r++): recorre las filas
+for ($c = 1; $c <= $col; $c++): recorre las columnas dentro de cada fila
+echo "<td>&nbsp;</td>": imprime una celda vacía
+
+b) Este código muestra un formulario para ingresar la edad, y al enviarlo, evalúa si la persona es mayor o menor de edad según si tiene 21 años o más
+if (!isset($_POST['submit'])): si el formulario no fue enviado, se muestra el formulario
+$_SERVER['PHP_SELF']: hace que el formulario se envíe a la misma página
+$_POST['age']: obtiene la edad ingresada
+if ($age >= 21): evalúa si es mayor de edad
+y muestra "Mayor de edad" o "Menor de edad" según el valor ingresado
+
+
+Ejercicio 4:
+
+En el primer echo , todavia no se definieron las variables $flor ni $color, entonces como estan vacias solo devuelve "El".
+En el segundo echo devuelve el texto completo con el valor de las variables "El clavel blanco" ya que en este punto si se definieron, con el include 'datos.php' previo
+
+
+Ejercicio 5:
+
+Analisis: (puse un 0 en contador.dat para que el contador inicie en 0)
+El archivo contador.php se encarga de leer cuántas visitas hay guardadas en contador.dat (que inició en 0), luego suma 1 a ese número, guardar el nuevo número en el archivo contador.dat y muestra el total actualizado en pantalla.
+ - con "r", "w" en $abrir = fopen($archivo) permite abrir el archivo para leerlo (r) y para editarlo (w) que borra el contenido que tenia antes
+El archivo visitas.php solo contiene al archivo de contador.php
+El archivo contador.dat se usa para guardar el número total de visitas, para que persista
+
+
+
+PHP: arrays, funciones 
+
+Ejercicio 1:
+Si, son equivalentes porque construye el mismo array 
+
+Ejercicio 2:
+
+a) salida: bar1 ($matriz["x"] muestra "bar" y $matriz[12] muestra true que es "1")
+b) salida 5942 (de $matriz["unamatriz"][6] el 5, de  $matriz["unamatriz"][13] el 9, y de $matriz["unamatriz"]["a"] el 42)
+c) No hay salida porque no hay echo
+
+Ejercicio 3:
+3-a) Devuelve: Has entrado en esta pagina a las 15 horas, con 35 minutos y 12 segundos, del 10/9/2024
+
+3-b) Devuelve: 5+6=11
+
+Ejercicio 4:
+
+function comprobar_nombre_usuario($nombre_usuario){  
+   if (strlen($nombre_usuario)<3 || strlen($nombre_usuario)>20){  
+      echo $nombre_usuario . " no es válido<br>";  
+      return false;  
+   }  
+   $permitidos = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_";  
+   for ($i=0; $i<strlen($nombre_usuario); $i++){  
+      if (strpos($permitidos, substr($nombre_usuario,$i,1))===false){  
+         echo $nombre_usuario . " no es válido<br>";  
+         return false;  
+      }  
+   }  
+   echo $nombre_usuario . " es válido<br>";  
+   return true;  
+}
+
+// Pruebas
+comprobar_nombre_usuario("pepe");
+comprobar_nombre_usuario("a");
+comprobar_nombre_usuario("usuario_1");
+comprobar_nombre_usuario("user!");
+
+echo "<hr>";
+
+Terminaría siendo:
+
+comprobar_nombre_usuario("pepe");    (es válido)
+comprobar_nombre_usuario("a");     ( no es válido)
+comprobar_nombre_usuario("usuario_1"); (es válido)
+comprobar_nombre_usuario("user!");    ( no es válido)
