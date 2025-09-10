@@ -1,1 +1,488 @@
+﻿Ejercitación 1 - Responder el siguiente cuestionario
+1. Qué es HTML, cuando fue creado, cuáles fueron las distintas versiones y cuál es la última?
 
+Rta: HTML (HyperText Markup Language) es el lenguaje estándar para crear y estructurar páginas web.
+No es un lenguaje de programación, sino de marcado, lo que significa 
+que usa etiquetas para definir la estructura y el contenido de 
+un documento que un navegador puede interpretar 
+(por ejemplo, texto, imágenes, enlaces, tablas, formularios).
+
+Fue creado por Tim Berners-Lee en 1991. 
+Permitir compartir documentos de investigación entre científicos 
+a través de una red llamada World Wide Web (WWW).
+La primera versión de HTML se basó en el SGML 
+(Standard Generalized Markup Language), un estándar para 
+documentos estructurados.
+Desde entonces, ha pasado por varias versiones:
+1. HTML 1.0 (1991) Muy básico, solo texto, enlaces, imágenes simples.
+2. HTML 2.0 (1995) Introdujo formularios y tablas.
+3. HTML 3.2 (1997) Añadió soporte para applets, 
+scripts y tablas más complejas.
+Y demás versiones hasta llegar a:
+HTML Living Standard, que es la versión en constante actualización 
+y mantenida por el grupo WHATWG (Web Hypertext Application Technology 
+Working Group).
+Esto significa que HTML siempre está evolucionando 
+y no se congela en una versión fija.
+
+2. ¿Cuáles son los principios básicos que el W3C recomienda seguir para la creación de documentos
+con HTML?
+
+Rta: El W3C (World Wide Web Consortium), que ha sido uno 
+de los organismos clave en el desarrollo de HTML, recomienda 
+seguir ciertos principios básicos para crear documentos HTML que 
+sean correctos, accesibles y fáciles de mantener. Estos principios 
+son los siguientes:
+
+- Estructura bien formada y válida
+
+-Separar contenido, presentación y comportamiento
+
+- Uso de etiquetas semánticas
+
+- Accesibilidad para todos los usuarios
+
+- Uso correcto de enlaces e hipervínculos
+
+- Compatibilidad y portabilidad
+
+- Optimización y peso ligero
+
+- Metadatos y codificación
+
+
+3. En las Especificaciones de HTML, ¿cuándo un elemento o atributo se considera desaprobado? ¿y
+obsoleto?
+
+Rta: En las Especificaciones de HTML 
+(como las publicadas por el W3C y el WHATWG), 
+los términos desaprobado y obsoleto tienen significados diferentes, 
+aunque a veces la gente los confunde.
+
+Se considera desaprobado cuando sigue estando definido en 
+la especificación para mantener compatibilidad con documentos antiguos, 
+pero ya no se recomienda su uso en nuevos documentos.
+Todavía existe, pero no deberías usarlo (puede romperse en el futuro).
+
+Se considera obsoleto cuando ya no forma parte del estándar vigente 
+y su uso no es válido en HTML moderno.
+Ya no existe en el estándar; usarlo es incorrecto y puede no funcionar.
+
+4. ¿Qué es el DTD y cuáles son los posibles DTDs contemplados en la especificación de HTML 4.01?
+
+Rta: El DTD (Document Type Definition, o Definición de 
+Tipo de Documento) es una parte fundamental de las versiones antiguas 
+de HTML, especialmente hasta HTML 4.01 y XHTML.
+Es un conjunto de reglas que define la estructura y 
+los elementos permitidos en un documento HTML.Indica al navegador 
+qué versión de HTML se está usando y qué gramática debe seguir 
+para interpretar el documento. Se declara en la primera línea 
+del archivo HTML mediante <!DOCTYPE ...>.
+
+En HTML moderno (HTML5 y el estándar vivo) ya no se usan DTDs 
+completos, sino una declaración simplificada:
+
+<!DOCTYPE html>
+
+pero en HTML 4.01 eran obligatorios y más complejos.
+
+Para resumir , los DTDs de HTML 4.01 son:
+
+Strict → Código limpio, sin etiquetas de presentación.
+
+Transitional → Más permisivo, mantiene compatibilidad con etiquetas antiguas.
+
+Frameset → Igual que Transitional, pero para páginas con marcos.
+
+5. ¿Qué son los metadatos y cómo se especifican en HTML?
+
+Rta: Los metadatos son información sobre el documento web que 
+no forma parte del contenido visible de la página, 
+pero que describe sus características, configuración o comportamiento.
+Sirven para que navegadores, motores de búsqueda, redes sociales 
+y otros sistemas interpreten correctamente la página.
+
+Se pueden especificar con la etiqueta `<meta>` dentro del `<head>` 
+del documento HTML; con la etiqueta <link> para enlaces a 
+recursos externos; con la etiqueta `<title>` para el título 
+de la página; O mediante atributos en <html> o <body>.
+
+
+
+﻿Ejercitación 2 -
+
+2.a)
+
+<!-- Código controlado el día 12/08/2009 →
+
+Genera el comentario "Código controlado el día 12/08/2009" que puede ir en cualquier sección (head/body)
+
+Sección:
+  -Head o Body
+
+Atributos:
+  -No posee atributos
+  
+Etiquetas:
+  -La etiqueta de apertura (<!--) 
+  -La etiqueta de cierre (-->)
+
+Texto (" Código controlado el día 12/08/2009 ")
+
+2.b)
+
+<div id="bloque1">Contenido del bloque1</div>
+
+Crea un contenedor de bloque con el texto “Contenido del bloque1”.
+
+Sección:
+  -Body
+
+Atributos:
+  -id (opcional), identifica como "bloque1" al elemento.
+  
+Etiquetas:
+  -div (<div> </div>), crea un contenedor de bloque.
+
+Texto (" Código controlado el día 12/08/2009 ")
+
+2.c)
+
+<img src="" alt="lugar imagen" id="im1" name="im1" width="32" height="32" longdesc="detalles.htm" />
+
+Tecnicamente inserta una imagen 32x32, con un id y un name, que posee un texto alternativo y un enlace a una descripción larga de la imagen.
+Pero como el src esta vacío, no muestra nada.
+
+Sección:
+  -Body
+
+Atributos:
+  -src (obligatorio), indica la ruta o URL de la imagen, en este caso su usabilidad es nula.
+  -alt (obligatorio), muestra "lugar imagen" si la imagen no carga.
+  -id (opcional), identifica de manera global al elemento como "im1".
+  -name (opcional), le da el nombre de "im1" al elemento.
+  -width (opcional), define que el ancho de la imagen sea 32 píxeles.
+  -height (opcional), define que el alto de la imagen sea 32 píxeles.
+  -longdesc (opcional), enlaza a "detalles.htm".
+  
+Etiquetas:
+  -img (<img />), inserta una imagen.
+
+2.d)
+
+<meta name="keywords" lang="es" content="casa, compra, venta, alquiler " />
+<meta http-equiv="expires" content="16-Sep-2019 7:49 PM" />
+
+Define la lista de palabras claves "casa, compra, venta, alquiler " y que la fecha de expiración de la página es 16-Sep-2019 7:49 PM.
+
+Sección:
+  -Head
+
+Atributos:
+  -lang (opcional), al contenener "es",indica que el idioma es español.
+  -content (opcional), es el contenido del dato, en este caso "casa, compra, venta, alquiler ".
+  -name (opcional), le da el nombre de "keywords" al elemento.
+  -http-equiv="expires" (opcional), indica que debe expirar.
+  -content (opcional), indica la fecha en la que expira.
+
+Etiquetas:
+  -meta (<meta />), define metadatos.
+
+2.e)
+
+<a href="http://www.e-style.com.ar/resumen.html" type="text/html" hreflang="es" charset="utf-8" rel="help">Resumen HTML </a>
+
+Enlaza la pagina "http://www.e-style.com.ar/resumen.html"  con la etiqueta visible “Resumen HTML”
+
+Sección:
+  -Body
+
+Atributos:
+  -href (obligatoria), apunta a "http://www.e-style.com.ar/resumen.html".
+  -type (opcional), es de tipo texto.
+  -hreflang (opcional), al contenener "es",indica que el idioma del recurso es español.
+  -charset="utf-8" (opcional), indica la codificación de caracteres.
+  -rel="help" (opcional), indica que el recurso vinculado es documentación o ayuda relacionada.
+
+Etiquetas:
+  -a (<a> </a>), inserta vínculos o marcadores.
+
+Texto (“Resumen HTML”)
+
+2.f)
+
+<table width="200" summary="Datos correspondientes al ejercicio vencido">
+<caption align="top"> Título </caption>
+<tr>
+<th scope="col">&nbsp;</th>
+<th scope="col">A</th>
+<th scope="col">B</th>
+<th scope="col">C</th>
+</tr>
+<tr>
+<th scope="row">1º</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th scope="row">2º</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+
+Muestra una tabla 4×3 con título “Título”
+
+Sección:
+  -Body
+
+Atributos:
+  -width (opcional), define que el ancho de la tabla sea de 200 píxeles.
+  -summary (opcional), indica que la tabla tratara sobre "Datos correspondientes al ejercicio vencido".
+  -align="top" (opcional), posiciona el tulo de la tabla arriba.
+  -scope="col" (opcional), indica que es una celda de encabezado para columna.
+  -scope="row" (opcional) iindica que es una celda de encabezado para fila.
+
+Etiquetas:
+  -table (<table>), inserta una tabla.
+  -caption (<caption> </caption), establece el título para una tabla.
+  -tr (<tr> </tr>), inserta una fila en la tabla.
+  -th (<th> </th>), es la celda de encabezado de una tabla.
+  -td (<td> </td>), es una celda regular de una tabla.
+
+Caracter Especial: 
+  -&nbsp, representa un espacio en blanco que el navegador no puede dividir ni colapsar.
+
+
+
+﻿Ejercitación 3 -
+
+﻿3.a) Enlaces (<a>)
+
+<a href="http://www.google.com.ar">Click aquí para ir a Google</a>
+
+Enlace básico.
+
+Al hacer clic, abre Google en la misma pestaña.
+
+<a href="http://www.google.com.ar" target="_blank">Click aquí para ir a Google</a>
+
+Igual que el anterior, pero con target="_blank" abre Google en nueva pestaña/ventana.
+
+<a href="http://www.google.com.ar" type="text/html" hreflang="es" charset="utf-8" rel="help">
+
+Tiene atributos adicionales (tipo MIME, idioma, codificación y relación).
+
+Problemas: el href está mal escrito (espacio en medio) y no tiene texto visible dentro del <a>.
+
+<a href="#">Click aquí para ir a Google</a>
+
+Enlace que no navega a otro sitio: "#" es un marcador vacío que recarga la misma página.
+
+<a href="#arriba">Click aquí para volver arriba</a>
+
+<a name="arriba" id="arriba"></a>
+
+El primero apunta a un ancla interna (#arriba).
+
+El segundo crea el punto de destino dentro de la página.
+
+3.b) Imagen + enlace
+
+<p><img src="im1.jpg" alt="imagen1" /><a href="http://www.google.com.ar">Click aquí</a></p>
+
+Imagen y enlace están separados: la imagen no es clickeable, solo el texto.
+
+<p><a href="http://www.google.com.ar"><img src="im1.jpg" alt="imagen1" /></a> Click aquí</p>
+
+Imagen es clickeable; texto "Click aquí" no está dentro del enlace.
+
+<p><a href="http://www.google.com.ar"><img src="im1.jpg" alt="imagen1" />Click aquí</a></p>
+
+Imagen y texto están juntos dentro del enlace: todo el bloque es clickeable.
+
+<p><a href="http://www.google.com.ar"><img src="im1.jpg" alt="imagen1" /></a> <a href="http://www.google.com.ar">Click aquí</a></p>
+
+Imagen y texto son dos enlaces separados que apuntan al mismo destino.
+
+3.c) Listas
+
+<ul> 
+<li>xxx</li> 
+<li>yyy</li> 
+<li>zzz</li> 
+</ul> 
+
+Lista no ordenada con viñetas.
+
+<ol> 
+<li>xxx</li> 
+<li>yyy</li> 
+<li>zzz</li> 
+</ol> 
+
+Lista ordenada numérica.
+
+<ol> 
+<li>xxx</li> 
+</ol> 
+
+<ol> 
+<li value="2">yyy</li> 
+</ol> 
+
+<ol> 
+<li value="3">zzz</li> 
+</ol> 
+
+Tres listas separadas, cada una con un único elemento.
+
+El atributo value cambia el número inicial de cada ítem.
+
+<blockquote> 
+<p>
+1. xxx<br /> 
+2. yyy<br /> 
+3. zzz
+</p> 
+</blockquote>
+
+Texto sangrado con saltos <br /> para simular numeración, pero no es una lista semántica.
+
+3.d) Tablas simples
+
+<table border="1" width="300"> 
+<tr> 
+<th>Columna 1</th> 
+<th>Columna 2</th> 
+</tr> 
+<tr> 
+<td>Celda 1</td> 
+<td>Celda 2</td> 
+</tr> 
+<tr> 
+<td>Celda 3</td> 
+<td>Celda 4</td> 
+</tr> 
+</table> 
+
+Usa <th> para títulos de columna (texto centrado y en negrita por defecto).
+
+<table border="1" width="300"> 
+<tr> 
+<td><div align="center"><strong>Colum na1</strong></div></td> 
+<td><div align="center"><strong>Columna 2</strong></div></td> 
+</tr> 
+<tr> 
+<td>Celda 1</td> 
+<td>Celda 2</td> 
+</tr> 
+<tr> 
+<td>Celda 3</td> 
+<td>Celda 4</td> 
+</tr> 
+</table>
+      
+No usa <th>, sino <td> 
+con <div align="center"><strong>…</strong></div> para forzar alineación y negrita manualmente.
+
+3.e) Tablas con caption y colspan
+
+<table width="200"> 
+<caption>
+<table width="200"> 
+<tr> Título 
+</caption>
+
+<tr> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+<td bgcolor="#dddddd">&nbsp;</td>
+</tr>
+
+<tr> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+<td bgcolor="#dddddd"> &nbsp;</td> 
+<td bgcolor="#dddddd">&nbsp;</td>
+</tr> 
+</table>
+
+<td colspan="3">
+<div align="center">Título</div>
+</td> 
+
+</tr>
+
+<tr>
+<td bgcolor="#dddddd">&nbsp;</td> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+<td bgcolor="#dddddd">&nbsp;</td>
+</tr> 
+
+<tr> 
+<td bgcolor="#dddddd">&nbsp;</td>
+<td bgcolor="#dddddd">&nbsp;</td> 
+<td bgcolor="#dddddd">&nbsp;</td> 
+</tr> 
+
+</table>
+
+Primera tabla: usa <caption> (título semántico de la tabla), pero la estructura está mal cerrada (hay <table> dentro del <caption>).
+
+Segunda tabla: no usa <caption>, sino un <td colspan="3"> para hacer una celda que abarque toda la fila como título.
+
+3.f) Uso de rowspan vs colspan
+
+Primera tabla:
+
+rowspan="2" hace que la celda ocupe dos filas verticalmente.
+
+Segunda tabla:
+
+colspan="2" hace que una celda ocupe dos columnas horizontalmente.
+
+3.g) Combinación de colspan y rowspan + bordes y espaciado
+
+Primera tabla: combina colspan="2" y rowspan="2" en una misma celda.
+
+Segunda tabla: añade cellpadding="0" y cellspacing="0" para eliminar espacio interno y externo en las celdas.
+
+3.h) Formularios
+
+1. Método post, destino procesar.php, abre en nueva pestaña, usa <fieldset> y <legend>.
+
+type="password" oculta la clave.
+
+2. Método get, destino vacío (misma página), inputs simples dentro de <label>.
+
+type="text" para clave → visible.
+
+3. Acción mailto:, método post, enctype=text/plain, botón es type="reset" pero con texto "Enviar" (confuso, porque en realidad resetea el formulario).
+
+3.i) Botones
+
+<button><!--codigo--></button>
+
+Puede contener HTML (imagen + texto).
+
+Más flexible en diseño.
+
+<input type="button" ... />
+
+Solo texto en value, no admite contenido HTML interno.
+
+3.j) Radio buttons
+
+1. Ambos radios comparten name="opcion" → mutuamente excluyentes (solo uno puede marcarse).
+
+2. Radios con nombres distintos (opcion1 y opcion2) → se comportan como dos grupos separados, pueden marcarse ambos a la vez.
+
+3.k) Listas desplegables
+
+1. select simple con grupos <optgroup> → solo se puede elegir una opción.
+
+2. select multiple="multiple" → se pueden elegir varias opciones manteniendo presionada Ctrl/Cmd.
+
+Usa arreglo name="lista[]" para enviar varios valores.
